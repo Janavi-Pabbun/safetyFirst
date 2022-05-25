@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<body style="color:#0000d1; background-color:rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;">
+	<div class="topnav">
+		<ul class="list -right">
+			<a class="links " href="/"> 🏠 Home  </a>
+
+		</ul>
+	</div>
+	<style>
+
+
+		/* Style the links inside the navigation bar */
+		.topnav a {
+		float: right;
+		color: #F7FE2E;
+		font-weight: bold;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+
+
+		/* Change the color of links on hover */
+		.topnav a:hover {
+		background-color: #ddd;
+		color: black;
+		}
+	</style>
+	<br></br>
+<div class="container">
+    <div class="row">
+         <div style="width:60% ; margin: 40px auto;font-family:'Montserrat', sans-serif;">
+          <h1>Sign Up!</h1>  
+          </div>
+    <div style="width:60% ; margin: 0 auto;">
+    
+    <form action="/signup" method="POST" class="form-horizontal">
+    <div class="form-group">
+         <label for="username"  class="col-sm-3 control-label"><h3>Enter Username:</h3></label>
+           <div class="col-sm-9 ">
+			   <input name="txtUsername" type="text" id="txtUsername" class="form-control" placeholder="Enter Username"></input>
+        <required 
+             </div>
+    </div>
+    <div class="form-group">
+         <label for="password" class="col-sm-3 control-label"><h3>Enter Password:</h3></label>
+            <div class="col-sm-9 ">
+            <input name="txtPassword" type="password" id="password" title="Password must contain: Minimum 8 characters atleast 1 Alphabet and 1 Number"
+        class="form-control" placeholder="Enter Password" required pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" />
+            </div>
+    </div>
+     <div class="form-group">
+         <label for="txtEmail"  class="col-sm-3 control-label"><h3>Enter Email Id:</h3></label>
+           <div class="col-sm-9 ">
+			   <input name="txtEmail" id="email" class="form-control" placeholder="Enter Email">
+			   </input>
+        <required type="email" />
+             </div>
+    </div>
+     <br></br>
+    <div class="form-group ">
+      <div class="col-sm-offset-3 col-sm-9">
+   <button id="SignUp"class="btn  btn-primary "> Submit</button>
+   </div>
+</div>
+</form>
+</div>
+</div>
+</div>
+<script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js" defer></script>
+<script type="module">
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+import {
+ getAuth,
+ createUserWithEmailAndPassword,
+} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+ apiKey: "AIzaSyC2VSQJz5riYNL5wzTZ887i8t14FeaSXM4",
+ authDomain: "webfirst-890dc.firebaseapp.com",
+ projectId: "webfirst-890dc",
+ storageBucket: "webfirst-890dc.appspot.com",
+ messagingSenderId: "1054536133928",
+ appId: "1:1054536133928:web:abcbdf9d5307e29003f41d"
+};
+
+// Initialize Firebase
+
+firebase.initializeApp(firebaseConfig);
+
+
+
+
+document.getElementById('SignUp').addEventListener('click', signUpUser)
+
+
+function signUpUser() {
+ var email = document.getElementById("email").value
+ var password = document.getElementById("password").value
+
+ firebase
+       .auth()
+       .createUserWithEmailAndPassword(email, password)
+       .then(({ user  }) => {
+         return user .getIdToken().then((idToken) => {
+           window.location.href = '/savecookie?idToken=' + idToken;
+       }).catch(error => {
+           console.log(error);
+       }) ;
+
+   }
+       );
+
+}
+
+
+</script>
+</body>
+</html>

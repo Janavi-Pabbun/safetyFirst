@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	
+<body style="color:#0000d1; background-color:rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;">
+	<div class="topnav">
+		<ul class="list -right">	
+			<a class="links " href="/"> 🏠 Home  </a>
+			
+			</ul>
+		</div>
+	<style>
+
+
+		/* Style the links inside the navigation bar */
+		.topnav a {
+		float: right;
+		color: #F7FE2E;
+		font-weight: bold;
+		text-align: center;
+		padding: 14px 16px;
+		text-decoration: none;
+		font-size: 17px;
+		}
+		
+
+		/* Change the color of links on hover */
+		.topnav a:hover {
+		background-color: #ddd;
+		color: black;
+		}
+	</style>
+
+ <br></br> 
+  <div class="container">
+      <div class="row">
+           <div style="width:30% ; margin: 40px auto; font-family:georgia;font-size: 20px;">
+            <h1>LOG IN!</h1>  
+            </div>
+      <div style="width:30% ; margin: 0 auto;color: #0000d1; background-color:radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;">
+     
+      <form action="/login" method="POST" class="form-horizontal" >
+      <div class="form-group">
+		  
+           <label for="username"  class="col-sm-3 control-label">Username:</label>
+             <div class="col-sm-9 ">
+              <input type="email" placeholder="Type your email" id="email"></input>
+               </div>
+      </div>
+  
+     
+       <div class="form-group">
+           <label for="password" class="col-sm-3 control-label">Password:</label>
+              <div class="col-sm-9 ">
+              <input type="password" placeholder="Enter password" name="password" id="password"></input>
+              </div>
+      </div>
+	<br></br>
+       
+       <div class="form-group ">
+             <div class="col-sm-offset-3 col-sm-9">
+          <button id="logOut" class="btn  btn-primary "> Submit</button>
+          </div>
+      </div>
+  </form>
+  </div>
+  </div>
+  </div>
+  <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script>
+  
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+  
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+  
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyC2VSQJz5riYNL5wzTZ887i8t14FeaSXM4",
+        authDomain: "webfirst-890dc.firebaseapp.com",
+        projectId: "webfirst-890dc",
+        storageBucket: "webfirst-890dc.appspot.com",
+        messagingSenderId: "1054536133928",
+        appId: "1:1054536133928:web:abcbdf9d5307e29003f41d"
+      };
+  
+      // Initialize Firebase
+  
+      firebase.initializeApp(firebaseConfig);
+    
+      
+  
+  
+      document.getElementById('logOut').addEventListener('click', logInUser)
+      function logInUser() {
+        var email = document.getElementById("email").value
+        var password = document.getElementById("password").value
+  
+        firebase
+                .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(({ user}) => {
+                return user.getIdToken().then((idToken) => {
+                  window.location.href = '/savecookie?idToken=' + idToken;
+              }).catch(error => {
+                  console.log("error is mine login");
+              }) ;
+      
+          }
+              ).catch((error)=>{
+                  if(error.code=='auth/wrong-password'){
+                  alert("Wrong password")
+                  window.location.href='/login';
+                  }
+                  else if(error.code=='auth/user-not-found'){
+                  alert("User doesn't exist. Sign Up")
+                  window.location.href='/signup';
+                  }
+              });
+      
+      }
+      
+    </script>
+  </body>
+  </html>

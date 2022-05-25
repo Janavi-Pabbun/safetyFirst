@@ -1,0 +1,30 @@
+{
+  "name": "msitfinal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "engines": {
+    "node": "6.11.4",
+    "npm": "5.6.0"
+  },
+  "author": "Rahmeen, Akshita",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "firebase-admin": "^10.0.2",
+    "method-override": "^2.3.10",
+    "mongoose": "^6.2.10",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7"
+  }
+}

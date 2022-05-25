@@ -1,0 +1,395 @@
+﻿<!--<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>-->
+<!-- Google Fonts -->
+<!--<link href="https://fonts.googleapis.com/
+css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+
+
+</head>
+<style>
+    body {
+    font-family: 'Roboto Slab', serif;
+    background: #DAE2F8;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #D6A4A4, #DAE2F8);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+.h1-tag {
+    text-align: center;
+    margin-top: 4%;
+}
+
+.form-content-section {
+    width: 50%;
+    margin-top: 3%;
+    margin-left: 25%;
+}
+
+@media screen and (max-width: 600px) {
+    .form-content-section {
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .form-content-section {
+        width: 100%;
+        margin-top: 10%;
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .form-group {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .btn-primary {
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .form-group {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .btn-primary {
+        margin-left: 20px;
+    }
+}
+
+.myclass {
+    border-radius: 20px;
+}
+
+</style>
+<body>
+    <section id="form-section">
+        <h1 align='center'>
+            <u>FEEDBACK FORM</u>
+        </h1>
+        <br>
+        <h4 align='center'>
+            Please help us improve by sharing your experience with us <span> 😀 </span>
+        </h4>
+        <br>
+        <br>
+        <form class="form-content-section" action="/feedback" method="POST">
+            <div class="form-group">
+
+                <label for="exampleInputText">&nbsp;&nbsp;Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" class="form-control"
+                       id="exampleInputText" placeholder="Enter Your Name">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address:&nbsp;&nbsp; </label>
+                <input type="email" class="form-control"
+                       id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter Email ID">
+
+
+            </div>
+            <br>
+            <p>Enter source: </p>
+            <div class="form-group">
+                <textarea class="form-control"
+                     rows='5'
+                      cols='80'
+                      name='origin'></textarea>
+                      </div>
+
+            <br>
+            <p>Enter destination </p>
+            <div class="form-group">
+                <textarea class="form-control"
+                     rows='5'
+                      cols='80'
+                      name='destination'></textarea>
+                      </div>
+
+            <br>
+            <p>What was the danger index of the route? </p>
+            <div class="form-group">
+                <textarea class="form-control"
+                     rows='5'
+                      cols='80'
+                      name='danger'></textarea>
+                      </div>
+
+            <br>
+            <p> How well lit the road was? </p>
+
+            <label class="radio-inline"><input type="radio" name="light" value="low">low</label>
+            <label class="radio-inline"><input type="radio" name="light" value="medium">medium</label>
+            <label class="radio-inline"><input type="radio" name="light" value="high">high</label>
+            <br>
+
+            <p> How safe did you feel? </p>
+            <label class="radio-inline"><input type="radio" name="rate" value="3">&#128513;&nbsp;</label>
+            <label class="radio-inline"><input type="radio" name="rate" value="2">&#128528;&nbsp;</label>
+            <label class="radio-inline"><input type="radio" name="rate" value="1">&#128545;</label>
+            <br>
+            <p>Enter Remarks please: </p>
+            <div class="form-group">
+                <textarea class="form-control"
+                     rows='5'
+                      cols='80'
+                      name='remarks'></textarea>
+                      </div>
+
+            <br>
+            <br>
+            <button type="submit" class="btn btn-sm btn-dark">
+                submit feedback
+            </button>
+        </form>
+    </section>
+
+
+</body>
+</html>-->
+
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/
+css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS file -->
+    <style>
+         /** Links **/
+         .links {
+            text-decoration: none;
+            padding: 1rem 1rem;
+        }
+
+        .primary-link {
+            background-color: #e9d5ff;
+            color: #0f172a;
+            border-radius: 0.25rem;
+            margin: 1rem 1rem 1rem 0rem;
+            display: block;
+            max-width: 140px;
+        }
+
+        /** Lists **/
+        .list {
+            list-style-type: none;
+        }
+
+        .inline-list {
+            display: inline;
+            padding: 0rem 0.5rem
+        }
+
+        /** Navigation **/
+        .Navigation {
+            background-color: #e9d5ff;
+            color: #0f172a;
+            padding: 1rem;
+            border: 1rem 1rem;
+            border-radius: 2.5rem 2.5rem;
+            border-top-right-radius: 2.5rem;
+        }
+
+            .Navigation .nav-div {
+                padding: 1rem;
+                font-weight: bold;
+            }
+
+            .Navigation .links {
+                color: #0f172a;
+            }
+
+            .Navigation .-right {
+                text-align: right;
+            }
+
+            .Navigation .link-active {
+                font-weight: bold;
+            }
+
+                body {
+                    font-family: 'Roboto Slab', serif;
+                    background: #DAE2F8;
+                    /* fallback for old browsers */
+                    background: -webkit-linear-gradient(to right, #D6A4A4, #DAE2F8);
+                    /* Chrome 10-25, Safari 5.1-6 */
+                    background: linear-gradient(to right, #D6A4A4, #DAE2F8);
+                    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+                }
+
+                .h1-tag {
+                    text-align: center;
+                    margin-top: 4%;
+                }
+                /*.form{
+            height: 48px;
+            padding:2px 10px;
+        }*/
+
+                .form-content-section {
+                    width: 50%;
+                    margin-top: 3%;
+                    margin-left: 25%;
+                }
+
+                @media screen and (max-width: 600px) {
+                    .form-content-section {
+                        width: 100%;
+                        margin-top: 10%;
+                        margin-left: 0;
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    .form-content-section {
+                        width: 100%;
+                        margin-top: 10%;
+                        margin-left: 0;
+                    }
+                }
+
+                @media screen and (max-width: 600px) {
+                    .form-group {
+                        margin-left: 10px;
+                        margin-right: 10px;
+                    }
+
+                    .btn-primary {
+                        margin-left: 10px;
+                    }
+                }
+
+                @media screen and (max-width: 800px) {
+                    .form-group {
+                        margin-left: 20px;
+                        margin-right: 20px;
+                    }
+
+                    .btn-primary {
+                        margin-left: 20px;
+                    }
+                }
+
+                .myclass {
+                    border-radius: 20px;
+                }
+    </style>
+
+</head>
+<body>
+    <nav class="Navigation" >
+        <div class="nav-div">Welcome 😊 </div>
+      
+          <ul class="list -right">
+              <li class="inline-list">
+                  <a class="links " href="/about">About</a>
+              </li>
+              <li class="inline-list">
+                  <a class="links  " href="/maps">  Maps</a>
+              </li>
+              <li class="inline-list">
+                  <a class="links link-active" href="/feedback">  Feedback</a>
+              </li>
+          </ul>
+          </nav>
+    <section id="form-section">
+        <h1 align='center'>
+            <u>FEEDBACK FORM</u>
+        </h1>
+        <br>
+        <h4 align='center'>
+            Please help us improve by sharing your experience with us <span> 😀 </span>
+        </h4>
+        <br>
+        <br>
+        
+        <form class="form-content-section" action="/feedback" method="POST">
+            <div class="form-group">
+
+                <label for="exampleInputText">&nbsp;&nbsp;Name : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                <input type="text" class="form-control" name="username"
+                       id="exampleInputText" placeholder="Enter Your Name">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Email address:&nbsp;&nbsp; </label>
+                <input type="email" class="form-control"
+                       id="exampleInputEmail1" aria-describedby="emailHelp"
+                       placeholder="Enter Email ID">
+
+
+            </div>
+            <br>
+            <p>Enter source: </p>
+            <input type="text" class="form-control" name="origin">
+                     
+
+            <br>
+            <p>Enter destination </p>
+            <input type="text" class="form-control" name="destination">
+
+            <br>
+            <p>What was the danger index of the route? </p>
+            <input type="text" class="form-control" name="danger">
+
+            <br>
+            <p> How well lit the road was? </p>
+            <label class="radio-inline"><input type="radio" name="light" value="low">low</label>
+            <label class="radio-inline"><input type="radio" name="light" value="medium">medium</label>
+            <label class="radio-inline"><input type="radio" name="light" value="high">high</label>
+            <br>
+
+            <p> How safe did you feel? </p>
+            <label class="radio-inline"><input type="radio" name="rate" value="3">&#128513;&nbsp;</label>
+            <label class="radio-inline"><input type="radio" name="rate" value="2">&#128528;&nbsp;</label>
+            <label class="radio-inline"><input type="radio" name="rate" value="1">&#128545;</label>
+            <br>
+            <p>Enter Remarks please: </p>
+            <div class="form-group">
+                <textarea class="form-control"
+                          rows='5'
+                          cols='80'
+                          name='remarks'></textarea>
+            </div>
+
+            <br>
+            <br>
+            <button type="submit" class="btn btn-sm btn-dark">
+                submit feedback
+            </button>
+        </form>
+    </section>
+
+
+</body>

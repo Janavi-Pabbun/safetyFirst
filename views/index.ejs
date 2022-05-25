@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Women Safety Application</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" -->
+ 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
+        async></script>
+    <script src="https://www.gstatic.com/firebasejs/5.8.5/firebase.js"></script>
+
+    <!-- Loads the login UI elements-->
+    <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+
+</head>
+<link rel="stylesheet" href="style.css">
+<body id="landing" class="container" style="color:#0000d1 background-color: rgb(238,174,202);background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);;">
+
+    <h1 style="text-align: center; font-size: 100px; font-family: georgia; margin-top: 100px">Safety First </h1>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyC2VSQJz5riYNL5wzTZ887i8t14FeaSXM4",
+            authDomain: "webfirst-890dc.firebaseapp.com",
+            projectId: "webfirst-890dc",
+            storageBucket: "webfirst-890dc.appspot.com",
+            messagingSenderId: "1054536133928",
+            appId: "1:1054536133928:web:abcbdf9d5307e29003f41d"
+        };
+
+        // Initialize Firebase
+
+        firebase.initializeApp(firebaseConfig);
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.NONE);
+
+        // FirebaseUI config.
+        var uiConfig = {
+            signInOptions: [
+                // google sign in option
+                firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+            ],
+
+            // Terms of service url/callback.
+            tosUrl: '<your-tos-url>',
+            // Privacy policy url/callback.
+            privacyPolicyUrl: function () {
+                window.location.assign('<your-privacy-policy-url>');
+            },
+
+            callbacks: {
+                signInSuccess: function (user, credential, redirectUrl) {
+                    // User successfully signed in.
+
+                    user.getIdToken().then(function (idToken) {
+                        // document.cookie = "__session=idToken"
+                        window.location.href = '/savecookie?idToken=' + idToken;
+                    }).catch(error => {
+                        console.log(error);
+                    });
+
+                }
+            }
+        };
+        // Initialize the FirebaseUI Widget using Firebase.
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+
+        // The start method will wait until the DOM is loaded.
+        ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+
+
+    <h3 style="text-align: center; font-size: 50px; font-family: georgia; margin-top: 50px; margin-bottom: 20px;">
+        Ensure your safety by just a click ! </h3>
+    <center>
+        <div id="landing-header">
+
+
+            <div id="firebaseui-auth-container">
+               
+
+            </div>
+            <h3> OR </h3>
+            <a href="/login" class="ui secondary button large" style="text-align: center;color: #e9d5ff; text-decoration: none; display: block;border-radius: 0.75rem;
+            margin: 1rem 1rem 1rem 0rem; color: #ff1a8c ; background-color: #e9d5ff;max-width: 140px;font-size: large;">Login</a>
+            <a href="/signup" class="ui secondary button large" style="text-align: center; color:#e9d5ff; text-decoration: none;display: block; border-radius: 0.75rem;
+            margin: 1rem 1rem 1rem 0rem;color: #ff1a8c; background-color: #e9d5ff; max-width: 140px;font-size: large;">Sign Up
+            </a>
+            
+
+    </center>
+    </div>
+
+
+    </div>
+
+
+</body>
+
+</html>
